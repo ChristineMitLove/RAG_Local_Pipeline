@@ -1,9 +1,13 @@
 # Download PDF file
+# %% [markdown]
+# ## Section 1: Download PDF
+# Here we explain what this part does.
+
 import os
 import requests
 
 # Get PDF document
-pdf_ = "human-nutrition-text.pdf"
+pdf_path = "human-nutrition-text.pdf"
 
 # Download PDF if it doesn't already exist
 if not os.path.exists(pdf_path):
@@ -12,8 +16,8 @@ if not os.path.exists(pdf_path):
     url = "https://pressbooks.oer.hawaii.edu/humannutrition2/open/download?type=pdf"
 
     response = requests.get(url)
-    if response.headers.get('Content-Type') == text/html:
-        print('Your url is of text/html format. Update a correct PDF url please.')
+    if response.headers.get('Content-Type') == 'text/html':
+        print('Your url is of text/html format. Please find a correct url of your PDF document.')
     else:
         filename = pdf_path
         
@@ -27,8 +31,16 @@ if not os.path.exists(pdf_path):
             print(f"Failed to download the file. Status code: {response.status_code}")
 else:
     print(f"File {pdf_path} exists.")
+    
+
 
 
 
   
-  
+# %%
+# ## After download the file, here we open it and process it. 
+
+import fitz
+from tqdm.auto import tqdm
+
+def text_
