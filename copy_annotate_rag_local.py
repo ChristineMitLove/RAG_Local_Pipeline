@@ -12,9 +12,15 @@ pdf_path = "human-nutrition-text.pdf"
 if not os.path.exists(pdf_path):
     print("File doesn't exist, downloading...")
 
+    
     url = "https://pressbooks.oer.hawaii.edu/humannutrition2/open/download?type=pdf"
 
+    # send an [http get request] to url using the requests library.
+    # This is the line that fetches the remote content from the internet.
+    # By default requests.get downloads the entire response body into memory as response.content. 
+    # (Requires import requests.)
     response = requests.get(url)
+    
     if response.headers.get('Content-Type') == 'text/html':
         print('Your url is of text/html format. Please find a correct url of your PDF document.')
     else:
