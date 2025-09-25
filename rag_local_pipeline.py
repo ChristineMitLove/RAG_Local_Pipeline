@@ -1,7 +1,6 @@
 # Download PDF file
-# %% [markdown]
-# ## Section 1: Download PDF
-# Here we explain what this part does.
+# %% 
+# Section 1: Download PDF
 
 import os
 import requests
@@ -31,14 +30,10 @@ if not os.path.exists(pdf_path):
             print(f"Failed to download the file. Status code: {response.status_code}")
 else:
     print(f"File {pdf_path} exists.")
-    
-
-
-
 
   
 # %%
-# ## After download the file, here we open it and process it. 
+# After download the file, here we open it and process it. 
 
 import fitz
 from tqdm.auto import tqdm
